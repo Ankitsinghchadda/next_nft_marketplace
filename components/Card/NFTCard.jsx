@@ -1,8 +1,8 @@
 import React from "react";
 
-const NFTCard = ({img}) => {
+const NFTCard = ({img, width}) => {
   return (
-    <div className="shadow hover:shadow-md w-[245px] shrink-0 bg-white rounded-[1rem] overflow-hidden cursor-pointer hover:-translate-y-2 transition-all ">
+    <div className={`shadow hover:shadow-md shrink-0 bg-white rounded-[1rem] overflow-hidden cursor-pointer hover:-translate-y-2 transition-all ${width}`}>
       <img
         className="object-cover w-full h-48"
         src={img}

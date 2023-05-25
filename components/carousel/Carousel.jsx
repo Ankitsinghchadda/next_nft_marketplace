@@ -13,7 +13,7 @@ const Carousel = () => {
         {data.map((item) => {
             const {id, img} = item
             return (
-                <NFTCard key={id} img={img}/>
+                <NFTCard key={id} img={img} width={'w-[245px]'}/>
             )
         })}
       </div>
