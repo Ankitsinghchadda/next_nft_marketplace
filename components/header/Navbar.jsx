@@ -24,7 +24,6 @@ const Navbar = () => {
     }
 
     useEffect(() => {
-      console.log(router.asPath);
       if(router.asPath === '/Profile' || router.asPath === '/CreateNFT' || router.asPath === '/Explore'){
         setPage(true)
       }else{

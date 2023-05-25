@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import Button from "../Button/Button";
 
-const NFTCard = ({img, width}) => {
+const NFTCard = ({img, width, name, handleClick}) => {
+  // const router = useRouter();
+  // const [showButton, setButton] = useState(false);
+
+  // useEffect(() => {
+  //   if(router.asPath === '/Profile' || router.asPath === '/Explore'){
+  //     setButton(true)
+  //   }else{
+  //     setButton(false)
+  //   }
+  // }, [router])
   return (
     <div className={`shadow hover:shadow-md shrink-0 bg-white rounded-[1rem] overflow-hidden cursor-pointer hover:-translate-y-2 transition-all ${width}`}>
       <img
@@ -23,6 +35,7 @@ const NFTCard = ({img, width}) => {
                 <span className="font-semibold">41 ETH</span>
             </div>
         </div>
+        <Button name={name} handleClick={handleClick}/>
       </div>
     </div>
 
