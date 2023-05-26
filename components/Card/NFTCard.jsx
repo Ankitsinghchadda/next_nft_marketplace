@@ -20,6 +20,8 @@ const NFTCard = ({ img, width, name }) => {
     setShowModal(true);
   };
   return (
+    <>
+    
     <div
       className={`shadow hover:shadow-md shrink-0 bg-white rounded-[1rem] overflow-hidden cursor-pointer hover:-translate-y-2 transition-all ${width}`}
     >
@@ -49,8 +51,9 @@ const NFTCard = ({ img, width, name }) => {
         </div>
         <Button name={name} handleClick={handleClick} />
       </div>
-      <Modal showModal={showModal} setShowModal={setShowModal} />
     </div>
+    <Modal showModal={showModal} setShowModal={setShowModal} />
+    </>
   );
 };
 
