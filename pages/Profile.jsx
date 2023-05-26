@@ -2,7 +2,7 @@ import { useEvmWalletNFTs } from "@moralisweb3/next";
 import { useAccount, useNetwork } from "wagmi";
 import { useEffect, useState } from "react";
 import NFTCard from "../components/Card/NFTCard";
-import { IoMdAdd } from 'react-icons/io'
+import { IoMdAdd } from "react-icons/io";
 import Modal from "../components/Modal/Modal";
 
 const Profile = () => {
@@ -10,10 +10,7 @@ const Profile = () => {
   const { chain } = useNetwork();
   const { address, isConnected } = useAccount();
   const [nfts, setNfts] = useState(null);
-  const [showModal, setShowModal] = useState(false)
-  const handleClick = () => {
-    setShowModal(true);
-  }
+
   const fetchNfTs = async () => {
     const chainId = chain.id;
     const response = await getallNfts({ address, chain: "0xaa36a7" });
@@ -58,15 +55,20 @@ const Profile = () => {
               return <NFTCard img={item._data.metadata.image} />;
             })} */}
             {nfts ? (
-              nfts?.map((nft) => <NFTCard img={nft._data.metadata.image} width={'w-full'} name={'list'} handleClick={handleClick}/>)
+              nfts?.map((nft) => (
+                <NFTCard
+                  img={nft._data?.metadata?.image}
+                  width={"w-full"}
+                  name={"list"}
+                />
+              ))
             ) : (
               <>
                 <div className="">
                   <NFTCard
                     img={`https://images.unsplash.com/photo-1682686581551-867e0b208bd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80`}
-                    width={'w-full'}
-                    name={'list'}
-                    handleClick={handleClick}
+                    width={"w-full"}
+                    name={"list"}
                   />
                 </div>
               </>
@@ -74,7 +76,6 @@ const Profile = () => {
           </div>
         </div>
       </div>
-      <Modal showModal={showModal} setShowModal={setShowModal}/>
     </>
   );
 };

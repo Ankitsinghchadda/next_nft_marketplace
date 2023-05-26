@@ -8,14 +8,14 @@ import {
 } from "@web3modal/ethereum";
 import { Web3Modal } from "@web3modal/react";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
-import { arbitrum, mainnet, polygon } from "wagmi/chains";
+import { arbitrum, mainnet, polygon, sepolia } from "wagmi/chains";
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
   uri: "https://api.studio.thegraph.com/query/46824/nft-marketplace/v0.0.1",
 });
 
-const chains = [arbitrum, mainnet, polygon];
+const chains = [arbitrum, mainnet, polygon, sepolia];
 const projectId = process.env.NEXT_PUBLIC_W3M_PROJECT_ID;
 console.log({ projectId });
 
