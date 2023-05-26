@@ -1,2 +1,2 @@
 import { MoralisNextApi } from "@moralisweb3/next";
-export default MoralisNextApi({ apiKey: process.env.NEXT_PUBLIC_MORALIS_API_KEY });
+export default MoralisNextApi({ apiKey: process.env.NEXT_PUBLIC_MORALIS_API_KEY, authentication : {domain : "next-nft-marketplace-k4wp.vercel.app", uri: "https://next-nft-marketplace-k4wp.vercel.app/",  timeout: 120} });
