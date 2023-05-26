@@ -14,7 +14,6 @@ const Profile = () => {
   const fetchNfTs = async () => {
     const chainId = chain.id;
     const response = await getallNfts({ address, chain: "0xaa36a7" });
-    console.log(response);
     setNfts(response.data);
   };
 
@@ -26,7 +25,7 @@ const Profile = () => {
 
   return (
     <>
-      <div className="flex flex-col w-full h-full">
+      <div className="flex flex-col w-full h-full relative">
         <div className=" relative overflow-hidden w-full h-full">
           <div className="h-0 pb-[40%] md:pb-[25%] bg-gray-100 hover:bg-gray-300 max-h-[320px]"></div>
           <div className="px-4 h-[60px] md:h-[80px] lg:h-[100px] w-full lg:px-8 mb-4 md:mb-0">
@@ -57,6 +56,7 @@ const Profile = () => {
             {nfts ? (
               nfts?.map((nft) => (
                 <NFTCard
+                  key={nft._data?.nftAddress + nft._data?.tokenId}
                   img={nft._data?.metadata?.image}
                   width={"w-full"}
                   name={"list"}

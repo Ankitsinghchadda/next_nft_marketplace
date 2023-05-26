@@ -6,7 +6,6 @@ import GET_ACTIVE_ITEMS from "../constants/subgraphQueries/activeItems";
 
 const Explore = () => {
   const { loading, error, data: listedNfts } = useQuery(GET_ACTIVE_ITEMS);
-  console.log(listedNfts);
   return (
     <div className="pt-[72px] px-6 md:px-8">
       <h2 className="mt-4 font-semibold text-3xl mb-8">Explore</h2>
@@ -14,6 +13,7 @@ const Explore = () => {
         {listedNfts?.activeItems.length ? (
           listedNfts.activeItems.map((nft) => (
             <ExploreNFTCard
+              key={nft.nftAddress + nft.tokenId}
               nftAddress={nft.nftAddress}
               tokenId={nft.tokenId}
               price={nft.price}
