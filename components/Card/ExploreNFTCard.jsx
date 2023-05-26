@@ -45,7 +45,6 @@ const ExploreNFTCard = ({ nftAddress, tokenId, price }) => {
   //   //   write();
   const updateUi = async () => {
     if (data) {
-      console.log({ data });
       const newData = data.replace("ipfs://", "https://ipfs.io/ipfs/");
       const nftData = await (await fetch(newData)).json();
       setNFTData(nftData);
@@ -55,8 +54,6 @@ const ExploreNFTCard = ({ nftAddress, tokenId, price }) => {
   useEffect(() => {
     updateUi();
   }, [isFetching]);
-
-  console.log(nftData);
 
   return (
     <div

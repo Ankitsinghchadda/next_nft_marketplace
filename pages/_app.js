@@ -17,7 +17,6 @@ const client = new ApolloClient({
 
 const chains = [arbitrum, mainnet, polygon, sepolia];
 const projectId = process.env.NEXT_PUBLIC_W3M_PROJECT_ID;
-console.log({ projectId });
 
 const { publicClient } = configureChains(chains, [w3mProvider({ projectId })]);
 const wagmiConfig = createConfig({

@@ -10,7 +10,6 @@ import {
 } from "wagmi";
 
 const CreateNFT = () => {
-  console.log(Address.NFTAddress);
   const [image, setImage] = useState("");
   const [file, setFile] = useState(null);
   const [metadataUrl, setMetadataUrl] = useState("");
@@ -59,9 +58,7 @@ const CreateNFT = () => {
           },
         ],
       };
-      console.log({ options });
       const path = await uploadFolder(options);
-      console.log({ path });
       // Generate metadata and save to IPFS
       const metadata = {
         name: nftDetail.name,
@@ -69,7 +66,6 @@ const CreateNFT = () => {
         externalLink: nftDetail.externalLink,
         image: path[0].path,
       };
-      console.log({ metadata });
       const options2 = {
         abi: [
           {
@@ -80,7 +76,6 @@ const CreateNFT = () => {
       };
       await new Promise((resolve) => setTimeout(resolve, 1000));
       const metadataurl = await uploadFolder(options2);
-      console.log(typeof metadataurl[0].path);
       const url = metadataurl[0].path;
       const trimmedUrl = url.substring(
         "https://ipfs.moralis.io:2053/ipfs/".length
@@ -99,10 +94,8 @@ const CreateNFT = () => {
       };
       setMetadataUrl(modifiedUrl);
 
-      console.log(contractOptions);
       await new Promise((resolve) => setTimeout(resolve, 1000));
       const response = await writeAsync();
-      console.log(response);
 
       alert(
         `NFT successfully minted. Contract address - ${
