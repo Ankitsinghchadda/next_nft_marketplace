@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Button from "../Button/Button";
 import Modal from "../Modal/Modal";
+import image1 from '../../images/image1.jpeg'
 
 const NFTCard = ({ img, width, name }) => {
   // const router = useRouter();
