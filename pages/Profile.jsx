@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import NFTCard from "../components/Card/NFTCard";
 import { IoMdAdd } from "react-icons/io";
 import Modal from "../components/Modal/Modal";
+import image7 from '../images/image7.jpeg'
+import profile from '../images/profile.jpeg'
 
 const Profile = () => {
   const { fetch: getallNfts } = useEvmWalletNFTs();
@@ -32,7 +34,7 @@ const Profile = () => {
           <div className="px-4 h-[60px] md:h-[80px] lg:h-[100px] w-full lg:px-8 mb-4 md:mb-0">
             <div className="rounded-full border-4 border-white shadow-md absolute h-[100px] w-[100px] md:h-[140px] md:w-[140px] lg:w-[168px] lg:h-[168px] -mt-[36px] md:-mt-[86px]">
               <img
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60"
+                src={profile.src}
                 alt=""
                 className="object-cover w-full h-full rounded-full"
               />
@@ -66,7 +68,7 @@ const Profile = () => {
               <>
                 <div className="">
                   <NFTCard
-                    img={`https://images.unsplash.com/photo-1682686581551-867e0b208bd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80`}
+                    img={image7.src}
                     width={"w-full"}
                     name={"list"}
                   />
